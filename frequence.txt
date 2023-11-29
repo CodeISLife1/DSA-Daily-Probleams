@@ -1,0 +1,21 @@
+Frequencies in a Sorted Array
+  static void printFreq(int a[], int n)
+    {
+    	int frequncies = 1, i = 1;
+
+    	while(i < n)
+    	{
+    		while(i < n && a[i] == a[i - 1])
+    		{
+    			frequncies ++;
+    			i++;
+    		}
+
+    		System.out.println(a[i - 1] + " " + frequncies)
+
+    		i++;
+    		frequncies = 1;
+    	}
+    	if(n==1 || a[n-1]!=a[n-2])
+    	System.out.println(a[n-1]+" "+ 1) ;
+    }
