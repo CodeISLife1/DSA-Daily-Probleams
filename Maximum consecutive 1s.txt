@@ -1,0 +1,53 @@
+
+Q.Maximum consecutive 1s
+=======================================
+Naive Solution
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+
+        int res = 0;
+
+        for(int i = 0; i < nums.length ; i++)
+        {
+            int curr = 0;
+
+            for(int j = i; j<nums.length; j++)
+            {
+                if(nums[j] == 1)
+                {
+                    curr++;
+                }else{
+                    break;
+                }
+               
+            }        
+           res = Math.max(curr, res);
+        }
+        return res;
+    }
+}
+
+==============================================================================
+// Efficient solution
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+
+        int res = 0;
+           int curr = 0;
+
+        for(int i = 0; i < nums.length ; i++)
+        {            
+                if(nums[i] == 0)
+                {
+                    curr = 0;
+                }else{
+                    curr++;
+                    res = Math.max(res, curr);
+                }             
+            }        
+            return res;
+        }
+       
+    }
